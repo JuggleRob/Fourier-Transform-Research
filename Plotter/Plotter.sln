@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Plotter", "Plotter\Plotter.pyproj", "{B701A1E5-D34C-4366-AF7F-605B5B3F33B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B701A1E5-D34C-4366-AF7F-605B5B3F33B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B701A1E5-D34C-4366-AF7F-605B5B3F33B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CD3AFEC-C273-410F-85A2-5B5BB065E5AE}
+	EndGlobalSection
+EndGlobal
