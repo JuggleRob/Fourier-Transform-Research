@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 #plt.plot(x)
 #plt.show()
 ss = 3
-for nrOfVideo in range (5,6):
+for nrOfVideo in range (9,42):
     xr,yr = np.loadtxt('D:/vakken/onderzoek/onderzoekje/Data/' + str(ss) + '/yellow/' + str(nrOfVideo) + '.txt',
                        comments = '#',
                        unpack = True,
