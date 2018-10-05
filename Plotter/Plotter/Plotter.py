@@ -13,17 +13,17 @@ import matplotlib.pyplot as plt
 #plt.show()
 #plt.plot(x)
 #plt.show()
-ss = 900
-for nrOfVideo in range (28,42):
-    xr,yr = np.loadtxt('D:/vakken/onderzoek/Data/' + str(ss) + '/yellow/' + str(nrOfVideo) + '.txt',
+ss = 3
+for nrOfVideo in range (5,6):
+    xr,yr = np.loadtxt('D:/vakken/onderzoek/onderzoekje/Data/' + str(ss) + '/yellow/' + str(nrOfVideo) + '.txt',
                        comments = '#',
                        unpack = True,
                        delimiter = ',')
-    xg,yg = np.loadtxt('D:/vakken/onderzoek/Data/' + str(ss) + '/green/' + str(nrOfVideo) + '.txt',
+    xg,yg = np.loadtxt('D:/vakken/onderzoek/onderzoekje/Data/' + str(ss) + '/green/' + str(nrOfVideo) + '.txt',
                        comments = '#',
                        unpack = True,
                        delimiter = ',')
-    xb,yb = np.loadtxt('D:/vakken/onderzoek/Data/' + str(ss) + '/blue/' + str(nrOfVideo) + '.txt',
+    xb,yb = np.loadtxt('D:/vakken/onderzoek/onderzoekje/Data/' + str(ss) + '/blue/' + str(nrOfVideo) + '.txt',
                        comments = '#',
                        unpack = True,
                        delimiter = ',')
