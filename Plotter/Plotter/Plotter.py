@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import fftAnalysis as ffta
 
-baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
-#baseUrl = "D:/vakken/onderzoek/Data/"
+#baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
+baseUrl = "D:/vakken/onderzoek/Onderzoekje/Data/"
 
 
 #x,y = np.loadtxt('green.txt',
@@ -40,8 +40,8 @@ for nrOfVideo in range (28,42):
     #plt.plot(yb, xb, linewidth=0.5, c='dodgerblue')
 
     #sinus figuur
-    plt.xlabel('Time')
-    plt.ylabel('Height')
+    plt.xlabel('Time (frames)')
+    plt.ylabel('Height (pixels)')
     plt.plot(xr - 1000, linewidth=1.3, c='orange')
     plt.plot(xg - 1000, linewidth=1.3, c='green')
     plt.plot(xb - 1000, linewidth=1.3, c='dodgerblue')
