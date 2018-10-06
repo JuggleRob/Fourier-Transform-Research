@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import fftAnalysis as ffta
+import itertools
 
 baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
 #baseUrl = "D:/vakken/onderzoek/Onderzoekje/Data/"
@@ -39,12 +40,21 @@ for nrOfVideo in range (28,42):
     #plt.plot(yg, xg, linewidth=0.5, c='green')
     #plt.plot(yb, xb, linewidth=0.5, c='dodgerblue')
 
+    min = 10000000
+    max = 0
+    for h in itertools.chain(xr, xg, xb):
+        if (h < min):
+            min = h
+        if h > max:
+            max = h
+    offset = (max + min)/2
+
     #sinus figuur
     plt.xlabel('Time (frames)')
     plt.ylabel('Height (pixels)')
-    plt.plot(xr - 1000, linewidth=1.3, c='orange')
-    plt.plot(xg - 1000, linewidth=1.3, c='green')
-    plt.plot(xb - 1000, linewidth=1.3, c='dodgerblue')
+    plt.plot(xr - offset, linewidth=1.3, c='orange')
+    plt.plot(xg - offset, linewidth=1.3, c='green')
+    plt.plot(xb - offset, linewidth=1.3, c='dodgerblue')
     plt.show()
 
     #plotting fft
