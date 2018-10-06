@@ -16,6 +16,7 @@ baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
 #plt.plot(x)
 #plt.show()
 ss = 900
+
 for nrOfVideo in range (28,42):
     xr,yr = np.loadtxt(baseUrl + str(ss) + '/yellow/' + str(nrOfVideo) + '.txt',
                        comments = '#',
