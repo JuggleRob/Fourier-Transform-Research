@@ -49,8 +49,10 @@ for nrOfVideo in range (28,42):
 
     #plotting fft
     N = len(xr)
-    yf = 2.0/N * np.abs(np.fft.fft(yr)[:N//2])
-    plt.plot(yf)
+    T = 1/60
+    xf = np.linspace(0.0, 1.0/(2.0*T), N//2)
+    yf = 2.0/N * np.abs(np.fft.fft(xr)[:N//2])
+    plt.plot(xf,yf)
     plt.show()
 
     print (ffta.PeekWidths(yf, 50))
