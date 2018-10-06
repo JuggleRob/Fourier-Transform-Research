@@ -13,8 +13,8 @@ import matplotlib.pyplot as plt
 #plt.show()
 #plt.plot(x)
 #plt.show()
-ss = 3
-for nrOfVideo in range (2,42):
+ss = 900
+for nrOfVideo in range (10,31):
     xr,yr = np.loadtxt('D:/vakken/onderzoek/onderzoekje/Data/' + str(ss) + '/yellow/' + str(nrOfVideo) + '.txt',
                        comments = '#',
                        unpack = True,
