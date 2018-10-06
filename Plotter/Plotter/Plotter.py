@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import fftAnalysis as ffta
 
-#baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
-baseUrl = "D:/vakken/onderzoek/Onderzoekje/Data/"
+baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
+#baseUrl = "D:/vakken/onderzoek/Onderzoekje/Data/"
 
 
 #x,y = np.loadtxt('green.txt',
@@ -50,8 +50,8 @@ for nrOfVideo in range (28,42):
     #plotting fft
     N = len(xr)
     T = 1/60
-    xf = np.linspace(0.0, 1.0/(2.0*T), N//2)
-    yf = 2.0/N * np.abs(np.fft.fft(xr)[:N//2])
+    xf = np.linspace(0.0, 1.0/(2.0*T), N//2 -1)
+    yf = 2.0/N * np.abs(np.fft.fft(xr)[1:N//2])
     plt.plot(xf,yf)
     plt.show()
 
