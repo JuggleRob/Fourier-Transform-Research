@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import fftAnalysis as ffta
 
 baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
 #baseUrl = "D:/vakken/onderzoek/Data/"
@@ -50,3 +51,5 @@ for nrOfVideo in range (28,42):
     yf = 2.0/N * np.abs(np.fft.fft(yr)[:N//2])
     plt.plot(yf)
     plt.show()
+
+    print (ffta.PeekWidths(yf, 50))
