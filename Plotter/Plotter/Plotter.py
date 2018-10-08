@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import fftAnalysis as ffta
 import itertools
 
-baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
-#baseUrl = "D:/vakken/onderzoek/Onderzoekje/Data/"
+#baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
+baseUrl = "D:/vakken/onderzoek/Onderzoekje/Data/"
 
 
 #x,y = np.loadtxt('green.txt',
@@ -18,7 +18,7 @@ baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
 #plt.show()
 ss = 900
 
-for nrOfVideo in range (28,42):
+for nrOfVideo in range (39,42):
     xr,yr = np.loadtxt(baseUrl + str(ss) + '/yellow/' + str(nrOfVideo) + '.txt',
                        comments = '#',
                        unpack = True,
@@ -34,11 +34,12 @@ for nrOfVideo in range (28,42):
 
 
     #lissajous figuur
-    #plt.xlabel('Width')
-    #plt.ylabel('Height')
-    #plt.plot(yr, xr, linewidth=0.5, c='orange')
-    #plt.plot(yg, xg, linewidth=0.5, c='green')
-    #plt.plot(yb, xb, linewidth=0.5, c='dodgerblue')
+    plt.xlabel('Width')
+    plt.ylabel('Height')
+    plt.plot(yr, xr, linewidth=0.5, c='orange')
+    plt.plot(yg, xg, linewidth=0.5, c='green')
+    plt.plot(yb, xb, linewidth=0.5, c='dodgerblue')
+    plt.show()
 
     min = 10000000
     max = 0
