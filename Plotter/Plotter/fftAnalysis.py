@@ -21,5 +21,5 @@ def HighestPeek (input, stepSize):
         if (abs(input[i]) > max):
             max = abs(input[i])
             j = i
-    return (j * stepSize,max)
+    return (j * stepSize)
 
