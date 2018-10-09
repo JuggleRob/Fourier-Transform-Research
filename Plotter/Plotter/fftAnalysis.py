@@ -15,3 +15,11 @@ def PeekWidths (input, treshold):
             overTreshold = False
     return output
 
+def HighestPeek (input, stepSize):
+    max = 0
+    for i in range(len(input)):
+        if (abs(input[i]) > max):
+            max = abs(input[i])
+            j = i
+    return (j * stepSize,max)
+
