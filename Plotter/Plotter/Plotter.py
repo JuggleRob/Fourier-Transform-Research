@@ -4,8 +4,8 @@ import fftAnalysis as ffta
 import itertools
 
 pixelToCm = 78/64 * 0.1
-baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
-#baseUrl = "D:/vakken/onderzoek/Onderzoekje/Data/"
+#baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
+baseUrl = "D:/vakken/onderzoek/Onderzoekje/Data/"
 
 maxBallsOfJuggler = [8,5,8,5,3,4,3,5,7,7,8,8,7,7,4,7,5,5,5,5,7,4,7,5,5,5,6,4,4,4,5,5,7,5,5,7,5,7,5,5,4,5]
 
@@ -78,6 +78,8 @@ for nrOfVideo in range (0,42):
     #plt.plot(xf,yf)
     #plt.show()
 print(listOfFreq)
+plt.xlabel('Maximum balls the juggler can juggle for >50 catches')
+plt.ylabel('Frequency of throws in siteswap 3 (Hz)')
 plt.plot(maxBallsOfJuggler, listOfFreq, "ro")
 plt.show()
     
