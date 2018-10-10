@@ -21,5 +21,13 @@ def HighestPeek (input, stepSize):
         if (abs(input[i]) > max):
             max = abs(input[i])
             j = i
-    return (j * stepSize)
+    return (max)
+
+def TotalDifference(i1, i2, i3):
+    total = 0
+    for i in range (len(i1)):
+        total += abs((i1[i] - i2[i]))
+        total += abs((i1[i] - i3[i]))
+        total += abs((i2[i] - i3[i]))
+    return total/len(i1)
 

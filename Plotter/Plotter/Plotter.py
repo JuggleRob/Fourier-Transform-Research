@@ -4,8 +4,8 @@ import fftAnalysis as ffta
 import itertools
 
 pixelToCm = 78/64 * 0.1
-#baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
-baseUrl = "D:/vakken/onderzoek/Onderzoekje/Data/"
+baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
+#baseUrl = "D:/vakken/onderzoek/Onderzoekje/Data/"
 
 maxBallsOfJuggler = [8,5,8,5,3,4,3,5,7,7,8,8,7,7,4,7,5,5,5,5,7,4,7,5,5,5,6,4,4,4,5,5,7,5,5,7,5,7,5,5,4,5]
 
@@ -18,11 +18,12 @@ maxBallsOfJuggler = [8,5,8,5,3,4,3,5,7,7,8,8,7,7,4,7,5,5,5,5,7,4,7,5,5,5,6,4,4,4
 #plt.show()
 #plt.plot(x)
 #plt.show()
-ss = 3
+ss = 900
 
 listOfFreq = []
 
-for nrOfVideo in range (0,42):
+for nrOfVideo in range (6,42):
+    print(nrOfVideo)
     xr,yr = np.loadtxt(baseUrl + str(ss) + '/yellow/' + str(nrOfVideo) + '.txt',
                        comments = '#',
                        unpack = True,
@@ -59,7 +60,7 @@ for nrOfVideo in range (0,42):
     #plt.plot(yb, xb - min, linewidth=0.5, c='dodgerblue')
     #plt.show()
 
-    #sinus figuur
+    ##sinus figuur
     #plt.xlabel('Time (frames)')
     #plt.ylabel('Height (cm)')
     #plt.plot(xr - offset, linewidth=1.3, c='orange')
@@ -71,15 +72,18 @@ for nrOfVideo in range (0,42):
     N = len(xr)
     T = 1/60
     xf = np.linspace(0.0, 1.0/(2.0*T), N//2 -1)
-    yf = 2.0/N * np.abs(np.fft.fft(xr)[1:N//2])
+    
+    yrf = 2.0/N * np.abs(np.fft.fft(xr)[1:N//2])
+    ygf = 2.0/N * np.abs(np.fft.fft(xg)[1:N//2])
+    ybf = 2.0/N * np.abs(np.fft.fft(xb)[1:N//2])
 
-    listOfFreq.append(ffta.HighestPeek(yf, 2.0*T))
+    listOfFreq.append(ffta.TotalDifference(yrf,ygf,ybf))
 
     #plt.plot(xf,yf)
     #plt.show()
 print(listOfFreq)
 plt.xlabel('Maximum balls the juggler can juggle for >50 catches')
-plt.ylabel('Frequency of throws in siteswap 3 (Hz)')
-plt.plot(maxBallsOfJuggler, listOfFreq, "ro")
+plt.ylabel('Sum of differences between Fourier Transforms of all three balls')
+plt.plot(maxBallsOfJuggler[6:], listOfFreq, "ro")
 plt.show()
     
