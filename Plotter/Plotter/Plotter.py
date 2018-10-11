@@ -77,13 +77,14 @@ for nrOfVideo in range (6,42):
     ygf = 2.0/N * np.abs(np.fft.fft(xg)[1:N//2])
     ybf = 2.0/N * np.abs(np.fft.fft(xb)[1:N//2])
 
-    listOfFreq.append(ffta.TotalDifference(yrf,ygf,ybf))
+    totalFourier = yrf + ygf + ybf
 
-    #plt.plot(xf,yf)
+    listOfFreq.append(ffta.TotalDifference(yrf, ygf, ybf))
+
+    #plt.plot(xf,totalFourier)
     #plt.show()
 print(listOfFreq)
-plt.xlabel('Maximum balls the juggler can juggle for >50 catches')
-plt.ylabel('Sum of differences between Fourier Transforms of all three balls')
+plt.xlabel("Maximum balls the juggler can juggle for >50 catches")
+plt.ylabel("Sum of differences between Fourier Transforms of all three balls")
 plt.plot(maxBallsOfJuggler[6:], listOfFreq, "ro")
 plt.show()
-    
