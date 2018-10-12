@@ -4,8 +4,8 @@ import fftAnalysis as ffta
 import itertools
 
 pixelToCm = 78/64 * 0.1
-baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
-#baseUrl = "D:/vakken/onderzoek/Onderzoekje/Data/"
+#baseUrl = "D:/Documents/Tweede jaar/OnderzoeksMethoden/onderzoek/Data/"
+baseUrl = "D:/vakken/onderzoek/Onderzoekje/Data/"
 
 maxBallsOfJuggler = [8,5,8,5,3,4,3,5,7,7,8,8,7,7,4,7,5,5,5,5,7,4,7,5,5,5,6,4,4,4,5,5,7,5,5,7,5,7,5,5,4,5]
 
@@ -22,7 +22,7 @@ ss = 900
 
 listOfFreq = []
 
-for nrOfVideo in range (6,42):
+for nrOfVideo in range (0,42):
     print(nrOfVideo)
     xr,yr = np.loadtxt(baseUrl + str(ss) + '/yellow/' + str(nrOfVideo) + '.txt',
                        comments = '#',
@@ -60,7 +60,7 @@ for nrOfVideo in range (6,42):
     #plt.plot(yb, xb - min, linewidth=0.5, c='dodgerblue')
     #plt.show()
 
-    ##sinus figuur
+    ###sinus figuur
     #plt.xlabel('Time (frames)')
     #plt.ylabel('Height (cm)')
     #plt.plot(xr - offset, linewidth=1.3, c='orange')
@@ -85,6 +85,6 @@ for nrOfVideo in range (6,42):
     #plt.show()
 print(listOfFreq)
 plt.xlabel("Maximum balls the juggler can juggle for >50 catches")
-plt.ylabel("Sum of differences between Fourier Transforms of all three balls")
-plt.plot(maxBallsOfJuggler[6:], listOfFreq, "ro")
+plt.ylabel("Max difference between frequency of three balls")
+plt.plot(maxBallsOfJuggler, listOfFreq, "ro")
 plt.show()
