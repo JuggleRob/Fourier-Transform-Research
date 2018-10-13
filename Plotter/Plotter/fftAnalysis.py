@@ -1,5 +1,21 @@
 #hier kunnen we dingen maken om de fft mee te analyseren ofzo..?
 
+def HeightDifference(input):
+    tops = []
+    places = []
+    for i in range(len(input) - 10):
+        if(input[i] < input[i + 5] and input[i+10] < input[i+5]):
+            top = max(input[i:(i+10)])
+            if (input[i+5] > 0 and (len(tops) == 0 or tops[len(tops)-1] != top)):
+                tops.append(top)
+                places.append(i)
+
+    output = 0
+    for i in range(len(tops)-1):
+        output += abs(tops[i] - tops[i+1])
+    return output/len(input)
+
+
 def PeekWidths (input, treshold):
     output = []
     
