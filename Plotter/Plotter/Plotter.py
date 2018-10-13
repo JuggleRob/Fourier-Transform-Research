@@ -30,8 +30,7 @@ ss = 900
 listOfFreq = []
 
 
-
-for nrOfVideo in range (6,42):
+for nrOfVideo in range (0,42):
     if nrOfVideo in badVideos:
         continue;
     print(nrOfVideo)
@@ -102,5 +101,5 @@ for nrOfVideo in range (6,42):
 print(listOfFreq)
 plt.xlabel("Maximum balls the juggler can juggle for >50 catches")
 plt.ylabel("Difference in height of throws")
-plt.plot(maxBallsOfJuggler[6:], listOfFreq, "ro")
+plt.plot(maxBallsOfJuggler, listOfFreq, "ro")
 plt.show()
