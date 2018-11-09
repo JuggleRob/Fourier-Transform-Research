@@ -31,7 +31,7 @@ def PeekWidths (input, treshold):
             overTreshold = False
     return output[0]
 
-def HighestPeek (input, stepSize):
+def HighestPeek (input):
     max = 0
     for i in range(len(input)):
         if (abs(input[i]) > max):
@@ -48,4 +48,3 @@ def TotalDifference(i1, i2, i3):
 
         total = max(abs(i1[i] - i2[i]), abs(i1[i] - i3[i]), abs(i2[i] - i3[i]))
     return total/len(i1)
-
